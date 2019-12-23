@@ -6,10 +6,9 @@ import numpy as np
 
 def number_of_data():
     labels = [d for d in os.listdir(variables.train_path) if os.path.isdir(variables.train_path + d)]
-    print(labels)
     recordings = []
     for label in labels:
-        data = [f for f in os.listdir(variables.train_path + '/' + label) if f.endswith('.wav')]
+        data = [f for f in os.listdir(variables.train_path + label) if f.endswith('.wav')]
         recordings.append(len(data))
     plt.figure(figsize=(30,5))
     index = np.arange(len(labels))
