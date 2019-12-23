@@ -1,0 +1,1 @@
+train_path = './tensorflow_speech_recognition_data/train/'
