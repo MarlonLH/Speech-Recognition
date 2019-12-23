@@ -5,7 +5,8 @@ import numpy as np
 import variables
 
 def display_raw_wave(path, rate):
-    samples, sr = librosa.load(variables.train_path + path, sr=8000)
+    samples, sr = librosa.load(variables.train_path + path)
+    print(sr)
     fig = plt.figure(figsize=(14, 8))
     ax1 = fig.add_subplot(rate)
     ax1.set_title('Raw wave')
