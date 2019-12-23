@@ -15,4 +15,4 @@ def display_raw_wave(path, rate):
     plt.show()
 
 if __name__ == "__main__":
-    display_raw_wave('yes/0a7c2a8d_nohash_0.wav', 211)
+    display_raw_wave('bed/0a7c2a8d_nohash_0.wav', 211)
