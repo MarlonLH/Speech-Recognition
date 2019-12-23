@@ -24,5 +24,4 @@ def resample_data():
     classes = list(le.classes_)
     y = np_utils.to_categorical(y, num_classes=len(labels))
     all_waves = np.array(all_waves).reshape(-1, 8000, 1)
-    return all_waves, all_labels, classes
-
+    return all_waves, y, labels, classes
