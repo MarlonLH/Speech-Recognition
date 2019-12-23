@@ -2,10 +2,10 @@
 import librosa
 import matplotlib.pyplot as plt
 import numpy as np
+import variables
 
 def display_raw_wave(path, rate):
-    train_audio_path = './tensorflow_speech_recognition_data/train/'
-    samples, sr = librosa.load(train_audio_path + path, sr = 16000)
+    samples, sr = librosa.load(variables.train_path + path, sr=8000)
     fig = plt.figure(figsize=(14, 8))
     ax1 = fig.add_subplot(rate)
     ax1.set_title('Raw wave')
