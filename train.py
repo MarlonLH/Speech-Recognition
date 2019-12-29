@@ -45,7 +45,12 @@ def train():
     mc = ModelCheckpoint('best_model.hdf5', monitor='val_acc', verbose=1, save_best_only=True, mode='max')
     history = model.fit(x_tr, y_tr ,epochs=100, callbacks=[es, mc], batch_size=32, validation_data=(x_val, y_val))
     display_results(history)
-    return x_val, y_val, classes
+    modelCpy = model
+    try:
+        model = load_model('best_model.hdf5')
+    except:
+        model = modelCpy
+    return x_val, y_val, classes, model
 
 if __name__ == "__main__":
     train()

@@ -10,8 +10,11 @@ def record_durations():
     for label in labels:
         waves = [f for f in os.listdir(variables.train_path + label) if f.endswith('.wav')]
         for wav in waves:
-            sample_rate, samples = wavfile.read(variables.train_path + label + '/' + wav)
-            durations.append(float(len(samples)/sample_rate))
+            try:
+                sample_rate, samples = wavfile.read(variables.train_path + label + '/' + wav)
+                durations.append(float(len(samples) / sample_rate))
+            except:
+                print(variables.train_path + label + '/' + wav + ' cannot be readed.')
     plt.hist(np.array(durations))
     plt.show()
 

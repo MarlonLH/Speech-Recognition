@@ -5,7 +5,7 @@ from keras.models import load_model
 import IPython.display as ipd
 import numpy as np
 
-def solve(x_val, y_val, classes):
+def solve(x_val, y_val, classes, model):
     model = load_model('best_model.hdf5')
     index = random.randint(0, len(x_val) - 1)
     samples = x_val[index].ravel()
@@ -14,5 +14,5 @@ def solve(x_val, y_val, classes):
     print("Prediction:", predict(samples, model, classes))
 
 if __name__ == "__main__":
-    x_val, y_val, classes = train()
-    solve(x_val, y_val, classes)
+    x_val, y_val, classes, model = train()
+    solve(x_val, y_val, classes, model)
