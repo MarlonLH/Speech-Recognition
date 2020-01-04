@@ -31,8 +31,8 @@ def solve(x_val, y_val, classes, model):
             label.append(predict(samples, model, classes))
         except:
             print(variables.test_path + wav + ' cannot be readed.')
-    writeInFile(file, fname, label)
-    print(fname, label)
+        writeInFile(file, fname, label)
+        print(fname, label)
 
 if __name__ == "__main__":
     x_val, y_val, classes, model = train()
