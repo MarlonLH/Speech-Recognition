@@ -1,4 +1,4 @@
-ipython==7.10.2
+ipython==7.16.3
 ipython-genutils==0.2.0
 Keras==2.3.1
 Keras-Applications==1.0.8
